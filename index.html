@@ -93,40 +93,11 @@
 
         function chngMark() {
         let mark = "";
-        let tileOneToNine = Math.floor(Math.random() * 9);
+        let randomSpace = Math.floor(Math.random() * 27);
         let XorY = Math.floor(Math.random() * 2);
         if(XorY ==0) {mark = "X";}
         else {mark = "O";}
-        switch(tileOneToNine) {
-            case 0:
-                document.getElementById("1").innerHTML = mark;
-                break;
-            case 1:
-                document.getElementById("2").innerHTML = mark;
-                break;
-            case 2:
-                document.getElementById("3").innerHTML = mark;
-                break;
-            case 3:
-                document.getElementById("4").innerHTML = mark;
-                break;
-
-            case 4:
-                document.getElementById("5").innerHTML = mark;
-                break;
-            case 5:
-                document.getElementById("6").innerHTML = mark;
-                break;
-            case 6:
-                document.getElementById("7").innerHTML = mark;
-                break;
-            case 7:
-                document.getElementById("8").innerHTML = mark;
-                break;
-            case 8:
-                document.getElementById("9").innerHTML = mark;
-                break;
-            }
+        document.getElementById(gridPlace[randomSpace]).innerHTML = mark;
        }
     </script>
 </html>
