@@ -8,7 +8,10 @@
         </style>
     </head>
     <body>
+        <header>
         <h1>Simple Tic-Tac-Toe</h1>
+        <button onclick="chngMark()">Time Warp</button>
+        </header>
         <span>
             <div id="a1">X</div>
             <div id="a2">X</div>
@@ -27,7 +30,7 @@
     </body>
     <script>
        function chngMark() {
-        let tileOneToNine = Math.floor(Math.random() * 8);
+        let tileOneToNine = Math.floor(Math.random() * 9);
         switch(tileOneToNine) {
             case 0:
                 document.getElementById("a1").innerHTML = "A";
