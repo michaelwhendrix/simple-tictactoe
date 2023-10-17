@@ -28,9 +28,9 @@
         </header>
         <section>Level One
         <span>
-            <div id="a1" onclick="addMarkA1()"></div>
-            <div id="a2" onclick="addMarkA2()"></div>
-            <div id="a3" onclick="addMarkA3()"></div>
+            <div id="1" onclick="addMark(0)"></div>
+            <div id="2" onclick="addMark(1)"></div>
+            <div id="3" onclick="addMark(2)"></div>
         </span>
         <span>
             <div id="b1" onclick="addMarkB1()"></div>
@@ -56,7 +56,7 @@
                 <div id="b3" onclick="addMarkB3()"></div>
             </span>
             <span>
-                <div id="c1" onclick="addMarkC1()"></div>
+                <div id="c1" onclick="addMarkC1()"> </div>
                 <div id="c2" onclick="addMarkC2()"></div>
                 <div id="c3" onclick="addMarkC3()"></div>
             </span>
@@ -82,9 +82,15 @@
         
     </body>
     <script>
-        function addMarkA1() {
-            document.getElementById("a1").innerHTML = "X";
+        const gridPlace = ["1", "2", "3"];
+        let gridMrk = "";
+
+        function addMark(inMark) {
+            gridMrk = document.getElementById(gridPlace[inMark]).innerHTML;
+            if (gridMrk == "");
+            document.getElementById(gridPlace[inMark]).innerHTML = "X";
         }
+        
         function addMarkA2() {
             document.getElementById("a2").innerHTML = "X";
         }
@@ -118,13 +124,13 @@
         else {mark = "O";}
         switch(tileOneToNine) {
             case 0:
-                document.getElementById("a1").innerHTML = mark;
+                document.getElementById("1").innerHTML = mark;
                 break;
             case 1:
-                document.getElementById("a2").innerHTML = mark;
+                document.getElementById("2").innerHTML = mark;
                 break;
             case 2:
-                document.getElementById("a3").innerHTML = mark;
+                document.getElementById("3").innerHTML = mark;
                 break;
             case 3:
                 document.getElementById("b1").innerHTML = mark;
