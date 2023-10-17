@@ -3,11 +3,16 @@
         <title>Simple Tic-Tac-Toe</title>
         <style>
             span {
-                display: inline-block;
-                padding: 30px;;
+                display: flex;
+                flex-direction:row;
             }
             div {
                 font-size: 40px;
+                border: 2px solid black;
+                height: 50px;
+                width: 50px;
+                margin: 5px;
+                text-align: center;
             }
             button {
                 height: 100px;
@@ -22,19 +27,19 @@
         <button onclick="chngMark()">Time Warp</button>
         </header>
         <span>
-            <div id="a1">X</div>
-            <div id="a2">X</div>
-            <div id="a3">O</div>
+            <div id="a1"></div>
+            <div id="a2"></div>
+            <div id="a3"></div>
         </span>
         <span>
-            <div id="b1">O</div>
-            <div id="b2">O</div>
-            <div id="b3">X</div>
+            <div id="b1"></div>
+            <div id="b2"></div>
+            <div id="b3"></div>
         </span>
         <span>
-            <div id="c1">X</div>
-            <div id="c2">O</div>
-            <div id="c3">X</div>
+            <div id="c1"></div>
+            <div id="c2"></div>
+            <div id="c3"></div>
         </span>
     </body>
     <script>
@@ -74,7 +79,6 @@
                 document.getElementById("c3").innerHTML = mark;
                 break;
             }
-       }  
-       chngMark();
+       }
     </script>
 </html>
