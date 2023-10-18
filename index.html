@@ -56,7 +56,7 @@
                 <div id="15" onclick="addMark(15)"></div>
             </span>
             <span>
-                <div id="16" onclick="addMark(16)"> </div>
+                <div id="16" onclick="addMark(16)"></div>
                 <div id="17" onclick="addMark(17)"></div>
                 <div id="18" onclick="addMark(18)"></div>
             </span>
@@ -87,10 +87,24 @@
 
         function addMark(inMark) {
             gridMrk = document.getElementById(gridPlace[inMark-1]).innerHTML;
-            if (gridMrk == "");
+            if (gridMrk == ""){
             document.getElementById(gridPlace[inMark-1]).innerHTML = "X";
+            computerMove();
         }
-
+    }
+        function computerMove() {
+            let checkSpace = "";
+            while( checkSpace == "") {
+                let randomNum = Math.floor(Math.random() * 27);
+                console.log(randomNum);
+                checkSpace = document.getElementById(gridPlace[randomNum]).innerHTML;
+                console.log(checkSpace);
+                    if(checkSpace == "") {
+                       checkSpace = document.getElementById(gridPlace[randomNum]).innerHTML = "O";
+                    }
+                    else {checkSpace = "";}
+            }
+        }
         function chngMark() {
         let mark = "";
         let randomSpace = Math.floor(Math.random() * 27);
