@@ -84,15 +84,20 @@
     <script>
         const gridPlace = ["1", "2", "3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27"];
         let gridMrk = "";
-        let counter = 0;
 
         function addMark(inMark) {
+            let counter = 0;
             gridMrk = document.getElementById(gridPlace[inMark-1]).innerHTML;
             if (gridMrk == ""){
             document.getElementById(gridPlace[inMark-1]).innerHTML = "X";
-            counter++;
-        }
-            if (counter < 14) {computerMove();}
+            }
+            for(let j = 0; j < 27; j++){
+                if(document.getElementById(gridPlace[j]).innerHTML != ""){
+                    counter++;
+                }
+            }
+        
+            if (counter < 27) {computerMove();}
     }
         function computerMove() {
             let checkSpace = "";
@@ -106,12 +111,14 @@
             }
         }
         function chngMark() {
-        let mark = "";
-        let randomSpace = Math.floor(Math.random() * 27);
-        let XorY = Math.floor(Math.random() * 2);
-        if(XorY ==0) {mark = "X";}
-        else {mark = "O";}
-        document.getElementById(gridPlace[randomSpace]).innerHTML = mark;
-       }
+        for(let i = 0; i < 3; i++) {
+            let mark = "";
+            let randomSpace = Math.floor(Math.random() * 27);
+            let XorY = Math.floor(Math.random() * 2);
+            if(XorY ==0) {mark = "X";}
+            else {mark = "O";}
+            document.getElementById(gridPlace[randomSpace]).innerHTML = mark;
+        }
+        }
     </script>
 </html>
