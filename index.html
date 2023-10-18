@@ -84,22 +84,22 @@
     <script>
         const gridPlace = ["1", "2", "3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27"];
         let gridMrk = "";
+        let counter = 0;
 
         function addMark(inMark) {
             gridMrk = document.getElementById(gridPlace[inMark-1]).innerHTML;
             if (gridMrk == ""){
             document.getElementById(gridPlace[inMark-1]).innerHTML = "X";
-            computerMove();
+            counter++;
         }
+            if (counter < 14) {computerMove();}
     }
         function computerMove() {
             let checkSpace = "";
             while( checkSpace == "") {
                 let randomNum = Math.floor(Math.random() * 27);
-                console.log(randomNum);
                 checkSpace = document.getElementById(gridPlace[randomNum]).innerHTML;
-                console.log(checkSpace);
-                    if(checkSpace == "") {
+                    if(checkSpace == "" ) {
                        checkSpace = document.getElementById(gridPlace[randomNum]).innerHTML = "O";
                     }
                     else {checkSpace = "";}
