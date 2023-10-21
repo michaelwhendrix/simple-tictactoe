@@ -1,7 +1,12 @@
 <html>
     <head>
-        <title>Simple Tic-Tac-Toe</title>
+        <title>4D Tic-Tac-Toe</title>
         <style>
+            main {
+                display: flex;
+                flex-direction: column;
+                width:70%
+            }
             span {
                 display: flex;
                 flex-direction:row;
@@ -19,15 +24,28 @@
                 width: 400px;
                 font-size: 50px;
             }
+            #level-one {
+                align-self: flex-start;
+            }
+            #level-two {
+                align-self:center;
+            }
+            #level-three {
+                align-self: flex-end;
+            }
+            p {
+                width: 60%;
+            }
         </style>
     </head>
     <body>
         <header>
-        <h1>Simple Tic-Tac-Toe</h1>
+        <h1>4D Tic-Tac-Toe</h1>
         <button onclick="chngMark()">Time Warp</button>
-        <p id="final-notice"></p>
+        <p id="final-notice">The goal of this tic-tac-toe is to win a complete plane. For example all X's on Level 1 then the player wins or all O's on the first row of each Level (1,2,3) then Darth wins. The Time Warp adds/replaces ten random symbols propeling the players to a different board. This may give you an advantage or ruin your position to win.</p>
         </header>
-        <section>Level One
+        <main>
+        <section id="level-one">Level One
         <span>
             <div id="1" onclick="addMark(1)"></div>
             <div id="2" onclick="addMark(2)"></div>
@@ -45,7 +63,7 @@
         </span>
         </section>
 
-        <section>Level Two
+        <section id="level-two">Level Two
             <span>
                 <div id="10" onclick="addMark(10)"></div>
                 <div id="11" onclick="addMark(11)"></div>
@@ -63,7 +81,7 @@
             </span>
             </section>
             
-            <section>Level Three
+            <section id="level-three">Level Three
                 <span>
                     <div id="19" onclick="addMark(19)"></div>
                     <div id="20" onclick="addMark(20)"></div>
@@ -80,7 +98,7 @@
                     <div id="27" onclick="addMark(27)"></div>
                 </span>
                 </section>
-        
+                </main>
     </body>
     <script>
         const gridPlace = ["1", "2", "3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27"];
