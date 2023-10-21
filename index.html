@@ -131,17 +131,20 @@
             else {mark = "O";}
             document.getElementById(gridPlace[randomSpace]).innerHTML = mark;
         }
+        winLose();
         }
         function winLose() {
             for(let k = 0; k < 9; k++) {
-                let winFlag = 0;
+                let winCount = 0;
                 for(let m = 0; m < 9; m++) {
                     let checkWin = document.getElementById(winCombos[k][m]).innerHTML;
-                    console.log(checkWin);
-                    if(checkWin == "X"){winFlag = 1;}
-                    else if(checkWin == "O"){winFlag = 2}
-                    else {winFlag = 0;}
-                    document.getElementById("final-notice").innerHTML = "WINNER";
+                    if(checkWin == "X"){winCount++;}
+                    else if(checkWin == "O"){winCount--}
+                    if(winCount == 9){
+                    document.getElementById("final-notice").innerHTML = "X WINNER";}
+                    else if(winCount == -9){
+                    document.getElementById("final-notice").innerHTML = " O WINNER";}
+
                 }
             }
         }
