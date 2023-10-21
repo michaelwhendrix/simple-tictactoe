@@ -96,6 +96,7 @@
             [3,6,9,12,15,18,21,24,27]
         ]
         let gridMrk = "";
+        let winFlag = false;
 
         function addMark(inMark) {
             let counter = 0;
@@ -123,6 +124,7 @@
             }
         }
         function chngMark() {
+        for(let p = 0; p < 10; p++) {
         for(let i = 0; i < 3; i++) {
             let mark = "";
             let randomSpace = Math.floor(Math.random() * 27);
@@ -132,7 +134,9 @@
             document.getElementById(gridPlace[randomSpace]).innerHTML = mark;
         }
         winLose();
+        if(winFlag){break;}
         }
+    }
         function winLose() {
             for(let k = 0; k < 9; k++) {
                 let winCount = 0;
@@ -141,9 +145,9 @@
                     if(checkWin == "X"){winCount++;}
                     else if(checkWin == "O"){winCount--}
                     if(winCount == 9){
-                    document.getElementById("final-notice").innerHTML = "X WINNER";}
+                    document.getElementById("final-notice").innerHTML = "X WINNER"; winFlag = true;}
                     else if(winCount == -9){
-                    document.getElementById("final-notice").innerHTML = " O WINNER";}
+                    document.getElementById("final-notice").innerHTML = " O WINNER"; winFlag = true;}
 
                 }
             }
