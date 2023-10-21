@@ -42,7 +42,8 @@
         <header>
         <h1>4D Tic-Tac-Toe</h1>
         <button onclick="chngMark()">Time Warp</button>
-        <p id="final-notice">The goal of this tic-tac-toe is to win a complete plane. For example all X's on Level 1 then the player wins or all O's on the first row of each Level (1,2,3) then Darth wins. The Time Warp adds/replaces ten random symbols propeling the players to a different board. This may give you an advantage or ruin your position to win.</p>
+        <p id="final-notice">The goal of this tic-tac-toe is to win a complete plane. For example all X's on Level 1 then the player wins or all O's on the first row of each Level (1,2,3) then Darth wins. The Time Warp adds/replaces up to 27 random symbols propeling the players to a different board. This may give you an advantage or ruin your position to win.</p>
+        <h2>FOR RIGHT NOW REFRESH PAGE TO START NEW GAME. PLEASE.</h2>
         </header>
         <main>
         <section id="level-one">Level One
@@ -142,7 +143,7 @@
             }
         }
         function chngMark() {
-        for(let p = 0; p < 10; p++) {
+        for(let p = 0; p < 9; p++) {
         for(let i = 0; i < 3; i++) {
             let mark = "";
             let randomSpace = Math.floor(Math.random() * 27);
